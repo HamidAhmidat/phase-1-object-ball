@@ -127,20 +127,15 @@ console.log(homeTeamName());
 function numPointsScored(playerName) {
   const gameData = gameObject();
 
-  // Check if the player is in the home team
   if (gameData.home.players.hasOwnProperty(playerName)) {
     console.log(
       `${playerName} scored ${gameData.home.players[playerName].points} points.`
     );
-  }
-
-  // Check if the player is in the away team
-  else if (gameData.away.players.hasOwnProperty(playerName)) {
+  } else if (gameData.away.players.hasOwnProperty(playerName)) {
     console.log(
       `${playerName} scored ${gameData.away.players[playerName].points} points.`
     );
   } else {
-    // If the player name is not found in either team, return an error message
     console.log(`${playerName} is not a valid player name.`);
   }
 }
@@ -150,20 +145,15 @@ numPointsScored("Ben Gordon");
 function shoeSize(playerName) {
   const gameData = gameObject();
 
-  // Check if the player is in the home team
   if (gameData.home.players.hasOwnProperty(playerName)) {
     console.log(
       `${playerName} has a shoe size of ${gameData.home.players[playerName].shoe}.`
     );
-  }
-
-  // Check if the player is in the away team
-  else if (gameData.away.players.hasOwnProperty(playerName)) {
+  } else if (gameData.away.players.hasOwnProperty(playerName)) {
     console.log(
       `${playerName} has a shoe size of ${gameData.away.players[playerName].shoe}.`
     );
   } else {
-    // If the player name is not found in either team, return an error message
     console.log(`${playerName} is not a valid player name.`);
   }
 }
@@ -172,16 +162,12 @@ shoeSize("Ben Gordon");
 
 function teamColors(teamName) {
   const gameData = gameObject();
-  // Check the teamName if is in the home team
+
   if (gameData.home.teamName === teamName) {
     console.log(`${teamName} has a colors of: `, gameData.home.colors);
-  }
-  // Check the teamName if is in the away team
-  else if (gameData.away.teamName === teamName) {
+  } else if (gameData.away.teamName === teamName) {
     console.log(`${teamName} has a colors of: `, gameData.away.colors);
-  }
-  // If the team name is not found in either team, return an error message
-  else {
+  } else {
     console.log(`${teamName} is not a valid team name.`);
   }
 }
@@ -224,16 +210,11 @@ playerNumbers("Charlotte Hornets");
 function playerStats(playerName) {
   const gameData = gameObject();
 
-  // check if the player is on the home team
   if (gameData.home.players.hasOwnProperty(playerName)) {
     console.log(`${playerName}: `, gameData.home.players[playerName]);
-  }
-  // check if the player is on the away team
-  else if (gameData.away.players.hasOwnProperty(playerName)) {
+  } else if (gameData.away.players.hasOwnProperty(playerName)) {
     console.log(`${playerName}: `, gameData.away.players[playerName]);
-  }
-  // If the player name is not found in either team, return an error message
-  else {
+  } else {
     console.log(`${playerName} is not a valid player name.`);
   }
 }
@@ -243,7 +224,7 @@ playerStats("Alan Anderson");
 playerStats("Salah");
 
 // Bonus Questions
-// Which player has the most points? Call the function mostPointsScored.
+
 function mostPointsScored() {
   const gameData = gameObject();
   let mostPoints = 0;
@@ -261,7 +242,6 @@ function mostPointsScored() {
   return playerWithMostPoints;
 }
 
-// max shoe and rebounds credit to the Amazing Menar 😍
 function bigShoeRebounds() {
   let object = gameObject();
 
@@ -292,7 +272,6 @@ function bigShoeRebounds() {
 
 console.log(bigShoeRebounds());
 
-// Which team has the most points? Call the function winningTeam.
 function winningTeam() {
   const gameData = gameObject();
   let homeTeamPoints = 0;
@@ -311,7 +290,6 @@ function winningTeam() {
     : gameData.away.teamName;
 }
 
-// Which player has the longest name? Call the function playerWithLongestName.
 function playerWithLongestName() {
   const gameData = gameObject();
   let longestName = "";
@@ -331,8 +309,6 @@ console.log("Player with the most points:", mostPointsScored());
 console.log("Winning team:", winningTeam());
 console.log("Player with the longest name:", playerWithLongestName());
 
-// Super Bonus
-// Write a function that returns true if the player with the longest name had the most steals. Call the function
 function doesLongNameStealATon() {
   const gameData = gameObject();
   let longestName = "";
